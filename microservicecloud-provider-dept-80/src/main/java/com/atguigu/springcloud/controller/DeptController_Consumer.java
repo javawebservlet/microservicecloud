@@ -17,7 +17,11 @@ public class DeptController_Consumer {
     /**
      * 定义访问者地址
      */
-    private static final String REST_URL_PREFIX="http://localhost:8001";
+    //private static final String REST_URL_PREFIX="http://localhost:8001";
+    /**
+     * Application和客户端的控制层地址是一样的 private static final String REST_URL_PREFIX="http://MICROSERVICECLOUD-DEPT";
+     */
+    private static final String REST_URL_PREFIX="http://MICROSERVICECLOUD-DEPT";
     /**
     *
    使用restTemplate访问restful接口非常的简单粗暴无脑。
