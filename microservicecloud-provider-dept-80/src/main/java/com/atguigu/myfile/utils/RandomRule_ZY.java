@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.utils;
+package com.atguigu.myfile.utils;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;

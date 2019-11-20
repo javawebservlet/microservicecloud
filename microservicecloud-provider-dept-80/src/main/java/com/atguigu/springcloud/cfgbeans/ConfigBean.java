@@ -1,6 +1,6 @@
 package com.atguigu.springcloud.cfgbeans;
 
-import com.atguigu.springcloud.utils.RandomRule_ZY;
+import com.atguigu.myfile.utils.RandomRule_ZY;
 import com.netflix.loadbalancer.*;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
