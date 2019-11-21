@@ -11,7 +11,7 @@
     <groupId>com.atguigu.springcloud</groupId>
     <artifactId>microservicecloud-eureka-7002</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-eureka-7002</name>
+    <name>注册中心7002</name>
     <description>eureka集群搭建</description>
 
     <properties>

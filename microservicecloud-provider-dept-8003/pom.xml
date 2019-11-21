@@ -11,7 +11,7 @@
     <groupId>com.atguigu.springcloud</groupId>
     <artifactId>microservicecloud-provider-dept-8003</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-provider-dept-8003</name>
+    <name>服务端-8003</name>
     <description>服务端-8003</description>
 
     <properties>

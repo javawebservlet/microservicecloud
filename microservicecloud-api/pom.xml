@@ -11,7 +11,7 @@
     <groupId>com.atguigu.springcloud</groupId>
     <artifactId>microservicecloud-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-api</name>
+    <name>部门API</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

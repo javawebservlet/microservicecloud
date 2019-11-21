@@ -11,7 +11,7 @@
     <groupId>com.atguigu.springcloud</groupId>
     <artifactId>microservicecloud-eureka-7003</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-eureka-7003</name>
+    <name>注册中心7003</name>
     <description>集群模式</description>
 
     <properties>
