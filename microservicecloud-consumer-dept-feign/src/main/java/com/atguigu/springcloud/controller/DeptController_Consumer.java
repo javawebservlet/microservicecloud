@@ -2,19 +2,25 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entity.Dept;
 import com.atguigu.springcloud.service.DeptClientService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @desc  Feign是一种声明式、模板化的HTTP客户端。
  * @author bitao
  */
 @RestController
 public class DeptController_Consumer {
+
+    private static final Logger log = LoggerFactory.getLogger(DeptController_Consumer.class);
     /**
      * 定义访问者地址
      */
@@ -40,12 +46,14 @@ public class DeptController_Consumer {
     }
     @RequestMapping(value = "/consumer/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id){
-
+        log.info("查询id,"+id+"主键号");
         return this.service.get(id);
     }
     @RequestMapping(value = "/consumer/dept/list")
     public List<Dept> list() {
+        log.info("查询完成!");
         return this.service.list();
+
     }
 
 //    /**
