@@ -155,9 +155,13 @@ info:
    但是带来的代价就是维护多个线程池会对系统带来额外的性能开销. 如果是对性能有严格要求而且确信自己调用服务的客户端代码不会出问题的话, 
    可以使用Hystrix的信号模式(Semaphores)来隔离资源.
    
-
 **服务降级**
 所谓降级，一般是从整体负载考虑。就是当某个服务器熔断之后，服务器将不再被调用。
 此时客户端可以自己准备一个本地的fallback回调，返回一个缺省值。
 这样做，虽然服务水平下降，但好歹可用，比直接挂掉要强。
-  
+**服务监控HystrixDashboard**
+除了隔离依赖服务的调用以外，Hystrix还是提供了准实时的调用监控(Hystrix Dashboard),Hystrix会持续地记录所有通过Hystrix发起的请求的执行信息，
+并以统计报表和图形的形式展示给用户，包括每秒执行多少请求多少成功，多少失败等。Netflix通过hystrix-metrics-event-stream项目实现了对以上指标的监控。
+SpringCloud也提供了Hystrix Dashboard的整合，对监控内容转化成可视化界面。
+**自测：http://localhost:9001/hystrix**
+ **服务端和客户端启动后的访问地址： http://localhost:8001/hystrix.stream**
