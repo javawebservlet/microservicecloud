@@ -9,6 +9,7 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,4 +40,17 @@ public class DeptController {
 		return  new Dept().setDeptno(id).setDname("该ID:"+id+"没有对应的信息,null ~~~~@HystrixCommand")
 				          .setDbSource("no this dataSource in Mysql！");
 	}
+	/*@RequestMapping(value = "/dept/list",method = RequestMethod.GET)
+	@HystrixCommand(fallbackMethod = "processHystrixList_Get")
+	public List<Dept> list() {
+		List<Dept> list = this.service.list();
+		if(list.isEmpty()) {
+			throw new RuntimeException("没有查询到相关信息!");
+		}
+		return list;
+	}
+	public List<Dept> processHystrixList_Get(){
+
+		return new ArrayList<Dept>();
+	}*/
 }

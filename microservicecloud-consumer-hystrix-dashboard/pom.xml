@@ -11,7 +11,7 @@
     <groupId>com.atguigu.springcloud</groupId>
     <artifactId>microservicecloud-consumer-hystrix-dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-consumer-hystrix-dashboard</name>
+    <name>Hystrix Dashboard-监控服务</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -21,10 +21,15 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.atguigu.springcloud</groupId>
             <artifactId>microservicecloud-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- hystrix和 hystrix-dashboard相关 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
