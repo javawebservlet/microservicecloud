@@ -47,6 +47,9 @@ eureka:
 127.0.0.1 eureka7001.com
 127.0.0.1 eureka7002.com
 127.0.0.1 eureka7003.com
+127.0.0.1 myzuul.com
+127.0.0.1 config-3344.com
+127.0.0.1 client-config.com
 **eureka7001配置**
 server: 
   port: 7001
@@ -165,3 +168,29 @@ info:
 SpringCloud也提供了Hystrix Dashboard的整合，对监控内容转化成可视化界面。
 **自测：http://localhost:9001/hystrix**
  **服务端和客户端启动后的访问地址： http://localhost:8001/hystrix.stream**
+
+**ZUUL路由网关访问映射规则**
+概述：
+Zuul包含了对请求的路由和过滤两个最主要的功能：
+其中路由功能负责将外部请求转发到具体的微服务实例上，是实现外部访问统一入口的基础而过滤功能则负责请求的处理
+过程进行干预，是实现请求校验、服务聚合等功能的基础.Zuul和Eureka进行整合，将Zuul自身注册为Eureka服务治理下的应用同时从Eureka中获得其他微服务的消息，也即以后的访问微服务都是通过Zuul跳转后获得。
+注意：Zuul服务最终还是会注册进Eureka
+
+提供 = 代理 + 路由 + 过滤三大功能
+**路由基础浏览地址：http://myzuul.com:9527/microservicecloud-dept/dept/get/2**
+
+**zuul:
+  prefix: /atguigu #设置统一公共前缀
+  ignored-services: microservicecloud-dept #忽略掉真实微服务地址(单个) 
+  #ignored-services: "*" #如果有多个要忽略掉真实微服务地址就用这个(多个)
+  routes:
+    mydept.serviceId: microservicecloud-dept #真实地址(域名映射)
+    mydept.path: /mydept/** #真实地址映射**
+    
+    http://myzuul.com:9527/atguigu/mydept/dept/get/2 加前缀后的地址
+    
+ 
+ **SpringCloud_Config概述：
+ 一、就目前而言，对于微服务业界并没有一个统一的、标准的定义(While there is no precise definition of this architectural style)
+ 二、但通常而言，微服务架构是一种架构模式或者说是一种架构风格，它提倡将单一应用程序划分成一组小的服务**
+ **SpingCloud Config分为服务端和客户端**
